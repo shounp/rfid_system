@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base
 
-# Ajuste conforme seu container MySQL
+
 DB_USER = "rfid_user"
 DB_PASSWORD = "rfid123"
 DB_HOST = "localhost"
