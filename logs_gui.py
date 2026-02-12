@@ -37,14 +37,12 @@ def carregar_logs():
 
 def atualizar():
     carregar_logs()
-    root.after(5000, atualizar)  # Atualiza a cada 5 segundos
+    root.after(5000, atualizar)  
 
-# Janela principal
 root = tk.Tk()
 root.title("Logs de Acesso RFID")
 root.geometry("600x400")
 
-# Tabela
 columns = ("UID", "Status", "Data e Hora")
 tree = ttk.Treeview(root, columns=columns, show="headings")
 
@@ -54,11 +52,9 @@ for col in columns:
 
 tree.pack(fill=tk.BOTH, expand=True)
 
-# Botão atualizar manual
 btn = tk.Button(root, text="Atualizar agora", command=carregar_logs)
 btn.pack(pady=5)
 
-# Inicialização
 carregar_logs()
 atualizar()
 

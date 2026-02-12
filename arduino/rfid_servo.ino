@@ -19,17 +19,17 @@ void setup() {
 }
 
 void loop() {
-  // 1. Lê comandos vindos do Python
+  
   while (Serial.available()) {
     char c = Serial.read();
     if (c == '\n') {
       comando.trim();
 
       if (comando == "OPEN") {
-        sg90.write(90);   // abre
+        sg90.write(90);  
       }
       else if (comando == "CLOSE") {
-        sg90.write(0);    // fecha
+        sg90.write(0);    
       }
 
       comando = "";
@@ -38,7 +38,6 @@ void loop() {
     }
   }
 
-  // 2. Lê cartão RFID e manda SOMENTE o UID
   if (!mfrc522.PICC_IsNewCardPresent()) return;
   if (!mfrc522.PICC_ReadCardSerial()) return;
 
@@ -49,8 +48,8 @@ void loop() {
   }
   uid.toUpperCase();
 
-  Serial.println(uid);   // <-- só isso vai para o Python
+  Serial.println(uid);   
 
   mfrc522.PICC_HaltA();
-  delay(1500);           // evita leituras duplicadas
+  delay(1500);           
 }

@@ -28,14 +28,12 @@ while True:
         print("Fechando tranca...")
         ser.write(b"CLOSE\n")
         while keyboard.is_pressed("p"):
-            pass  # evita repetir várias vezes
+            pass  
 
-    # Lê UID do Arduino
     linha = ser.readline().decode(errors="ignore").strip()
     if not linha:
         continue
 
-    # Garante que é hexadecimal
     if not all(c in "0123456789ABCDEF" for c in linha.upper()):
         continue
 

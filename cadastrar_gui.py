@@ -10,7 +10,7 @@ from models import Usuario
 SERIAL_PORT = "COM6"
 BAUDRATE = 9600
 
-SENHA_MASTER = "1234"   # depois você pode colocar em variável de ambiente
+SENHA_MASTER = "1234"   
 
 # =========================
 # CONEXÕES
